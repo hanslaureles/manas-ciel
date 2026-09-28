@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIEL // Divine Wisdom Core &amp; Swarm Orchestrator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cinzel+Decorative:wght@700;900&family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hud.css?v=4">
+</head>
+<body>
+
+  <!-- Ambient Cosmic Atmospheric Background (Pure Procedural Aura & Floating Magicules) -->
+  <div class="hud-background">
+    <div class="cosmic-nebula nebula-teal"></div>
+    <div class="cosmic-nebula nebula-gold"></div>
+    <div class="cosmic-nebula nebula-center"></div>
+    <div class="magicule-particles" id="magiculeParticles"></div>
+    <div class="hud-grid-overlay"></div>
+    
+    <!-- Authentic Tensura Side Coordinate Brackets -->
+    <div class="side-stamp side-left" id="stampLeft">[00906 0301977 - 16969]</div>
+    <div class="side-stamp side-right" id="stampRight">[26961 - 1100301977]</div>
+  </div>
+
+  <div class="hud-layout">
+
+    <!-- Subordinate Agent Squadron (Left Column Dock with Clean Hover Flyouts) -->
+    <aside class="agents-dock" id="agentsDock">
+      <div class="dock-header">
+        <span class="dock-pulse-dot"></span>
+        <span class="mono-label">SQUADRON</span>
+      </div>
+
+      <div class="agents-column">
+        <!-- 01: Sakura -->
+        <div class="agent-dock-item" id="dock-sakura">
+          <div class="agent-badge-icon" id="badge-sakura" title="Sakura · Chief of Staff">
+            <span class="agent-emoji">🌸</span>
+            <span class="status-indicator-dot online"></span>
+          </div>
+          <div class="agent-flyout-card" id="card-sakura">
+            <div class="flyout-top">
+              <span class="flyout-name">Sakura</span>
+              <span class="flyout-badge" id="badge-status-sakura">STANDBY</span>
+            </div>
+            <span class="flyout-role">Chief of Staff · Obsidian Brain</span>
+            <p class="flyout-task" id="task-sakura">Memory retrieval and daily briefing pipeline.</p>
+          </div>
+        </div>
+
+        <!-- 02: Chaewon -->
+        <div class="agent-dock-item" id="dock-chaewon">
+          <div class="agent-badge-icon" id="badge-chaewon" title="Chaewon · Career Strategist">
+            <span class="agent-emoji">🐯</span>
+            <span class="status-indicator-dot online"></span>
+          </div>
+          <div class="agent-flyout-card" id="card-chaewon">
+            <div class="flyout-top">
+              <span class="flyout-name">Chaewon</span>
+              <span class="flyout-badge" id="badge-status-chaewon">STANDBY</span>
+            </div>
+            <span class="flyout-role">Career Strategist · ATS Engine</span>
+            <p class="flyout-task" id="task-chaewon">Single-page vector PDF resume generator.</p>
+          </div>
+        </div>
+
+        <!-- 03: Kazuha -->
+        <div class="agent-dock-item" id="dock-kazuha">
+          <div class="agent-badge-icon" id="badge-kazuha" title="Kazuha · Frontend Architect">
+            <span class="agent-emoji">🦢</span>
+            <span class="status-indicator-dot online"></span>
+          </div>
+          <div class="agent-flyout-card" id="card-kazuha">
+            <div class="flyout-top">
+              <span class="flyout-name">Kazuha</span>
+              <span class="flyout-badge" id="badge-status-kazuha">STANDBY</span>
+            </div>
+            <span class="flyout-role">Frontend Architect · Design Tokens</span>
+            <p class="flyout-task" id="task-kazuha">Zero-framework token and Git sentinel.</p>
+          </div>
+        </div>
+
+        <!-- 04: Yunjin -->
+        <div class="agent-dock-item" id="dock-yunjin">
+          <div class="agent-badge-icon" id="badge-yunjin" title="Yunjin · Document QA">
+            <span class="agent-emoji">🎨</span>
+            <span class="status-indicator-dot online"></span>
+          </div>
+          <div class="agent-flyout-card" id="card-yunjin">
+            <div class="flyout-top">
+              <span class="flyout-name">Yunjin</span>
+              <span class="flyout-badge" id="badge-status-yunjin">STANDBY</span>
+            </div>
+            <span class="flyout-role">Document QA · 404 Sentinel</span>
+            <p class="flyout-task" id="task-yunjin">DOM tree verification &amp; 0 broken link gate.</p>
+          </div>
+        </div>
+
+        <!-- 05: Eunchae -->
+        <div class="agent-dock-item" id="dock-eunchae">
+          <div class="agent-badge-icon" id="badge-eunchae" title="Eunchae · System Guardian">
+            <span class="agent-emoji">🥔</span>
+            <span class="status-indicator-dot online"></span>
+          </div>
+          <div class="agent-flyout-card" id="card-eunchae">
+            <div class="flyout-top">
+              <span class="flyout-name">Eunchae</span>
+              <span class="flyout-badge" id="badge-status-eunchae">STANDBY</span>
+            </div>
+            <span class="flyout-role">System Guardian · Gmail Triage</span>
+            <p class="flyout-task" id="task-eunchae">Hardware watchdog &amp; Gmail cleanup sweeps.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Central Stage: Ciel As The Pure Center Of Attention -->
+    <div class="hud-center-stage">
+
+      <!-- Top Header & Telemetry -->
+      <header class="hud-header">
+        <div class="hud-brand">
+          <div class="core-mini-icon">
+            <span class="core-dot"></span>
+          </div>
+          <div>
+            <h1 class="hud-title">CIEL</h1>
+            <span class="hud-subtitle">DIVINE WISDOM CORE // THOUGHT ACCELERATION: 1,000,000x</span>
+          </div>
+        </div>
+
+        <div class="hud-telemetry-bar">
+          <div class="telemetry-pill pill-gold">
+            <span class="pill-label">STATUS</span>
+            <span class="pill-val status-online" id="statusPill">● ACTIVE</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="pill-label">SILICON</span>
+            <span class="pill-val" id="gpuPill">AMD RX 6600 XT</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="pill-label">RAM</span>
+            <span class="pill-val" id="ramPill">-- / 32 GB</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="pill-label">CPU</span>
+            <span class="pill-val" id="cpuPill">--%</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="pill-label">MEMORY</span>
+            <span class="pill-val accent-gold" id="memoryPill">0 TURNS</span>
+          </div>
+          <div class="telemetry-pill pill-cyan">
+            <span class="pill-label">LATENCY</span>
+            <span class="pill-val accent-cyan" id="speedPill">&lt; 300ms</span>
+          </div>
+          <div class="telemetry-pill pill-gold pill-clickable" id="advisoryPill" style="display: none; cursor: pointer;" title="View Ciel's active recommendations">
+            <span class="pill-label">ADVISORY</span>
+            <span class="pill-val accent-gold" id="advisoryPillVal">✦ 1 ACTIVE</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Center Stage: Pure Vector Calculation Mandala -->
+      <main class="hud-stage">
+        <section class="reactor-section">
+          <div class="reactor-wrapper" id="reactorWrapper">
+
+            <!-- Radial Light Burst Rays -->
+            <div class="radial-rays" id="radialRays"></div>
+
+            <!-- Rotating Runic Calculation Wheels (Procedural SVG Vector Mandala) -->
+            <svg class="mandala-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Concentric Circular Paths -->
+                <path id="outerRunePath" d="M 250, 250 m -215, 0 a 215,215 0 1,1 430,0 a 215,215 0 1,1 -430,0" />
+                <path id="midRunePath" d="M 250, 250 m -165, 0 a 165,165 0 1,0 330,0 a 165,165 0 1,0 -330,0" />
+                <path id="innerRunePath" d="M 250, 250 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0" />
+                
+                <!-- Celestial Glow Filters -->
+                <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur1" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur2" />
+                  <feMerge>
+                    <feMergeNode in="blur1" />
+                    <feMergeNode in="blur2" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="intenseSunGlow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur2" />
+                  <feMerge>
+                    <feMergeNode in="blur1" />
+                    <feMergeNode in="blur2" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <!-- Radiant Solar Gradients (White into Golden Amber) -->
+                <radialGradient id="sunCoreGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+                  <stop offset="30%" stop-color="#FFF7B2" stop-opacity="0.98" />
+                  <stop offset="65%" stop-color="#FFB300" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#FF6F00" stop-opacity="0.25" />
+                </radialGradient>
+              </defs>
+
+              <!-- 36 Radial Sun Rays (Tensura Calculation Burst) -->
+              <g class="mandala-rays-group">
+                <line x1="326.0" y1="250.0" x2="496.0" y2="250.0" class="sun-ray ray-bright" />
+                <line x1="324.8" y1="263.2" x2="468.6" y2="288.5" class="sun-ray ray-dim" />
+                <line x1="321.4" y1="276.0" x2="471.8" y2="330.7" class="sun-ray ray-dim" />
+                <line x1="315.8" y1="288.0" x2="442.3" y2="361.0" class="sun-ray ray-bright" />
+                <line x1="308.2" y1="298.9" x2="438.4" y2="408.1" class="sun-ray ray-dim" />
+                <line x1="298.9" y1="308.2" x2="392.7" y2="420.1" class="sun-ray ray-dim" />
+                <line x1="288.0" y1="315.8" x2="368.0" y2="454.4" class="sun-ray ray-bright" />
+                <line x1="276.0" y1="321.4" x2="325.9" y2="458.6" class="sun-ray ray-dim" />
+                <line x1="263.2" y1="324.8" x2="292.7" y2="492.3" class="sun-ray ray-dim" />
+                <line x1="250.0" y1="326.0" x2="250.0" y2="472.0" class="sun-ray ray-bright" />
+                <line x1="236.8" y1="324.8" x2="209.0" y2="482.4" class="sun-ray ray-dim" />
+                <line x1="224.0" y1="321.4" x2="174.1" y2="458.6" class="sun-ray ray-dim" />
+                <line x1="212.0" y1="315.8" x2="127.0" y2="463.0" class="sun-ray ray-bright" />
+                <line x1="201.1" y1="308.2" x2="107.3" y2="420.1" class="sun-ray ray-dim" />
+                <line x1="191.8" y1="298.9" x2="69.2" y2="401.7" class="sun-ray ray-dim" />
+                <line x1="184.2" y1="288.0" x2="57.7" y2="361.0" class="sun-ray ray-bright" />
+                <line x1="178.6" y1="276.0" x2="18.8" y2="334.1" class="sun-ray ray-dim" />
+                <line x1="175.2" y1="263.2" x2="31.4" y2="288.5" class="sun-ray ray-dim" />
+                <line x1="174.0" y1="250.0" x2="14.0" y2="250.0" class="sun-ray ray-bright" />
+                <line x1="175.2" y1="236.8" x2="31.4" y2="211.5" class="sun-ray ray-dim" />
+                <line x1="178.6" y1="224.0" x2="18.8" y2="165.9" class="sun-ray ray-dim" />
+                <line x1="184.2" y1="212.0" x2="57.7" y2="139.0" class="sun-ray ray-bright" />
+                <line x1="191.8" y1="201.1" x2="69.2" y2="98.3" class="sun-ray ray-dim" />
+                <line x1="201.1" y1="191.8" x2="107.3" y2="79.9" class="sun-ray ray-dim" />
+                <line x1="212.0" y1="184.2" x2="127.0" y2="37.0" class="sun-ray ray-bright" />
+                <line x1="224.0" y1="178.6" x2="174.1" y2="41.4" class="sun-ray ray-dim" />
+                <line x1="236.8" y1="175.2" x2="209.0" y2="17.6" class="sun-ray ray-dim" />
+                <line x1="250.0" y1="174.0" x2="250.0" y2="28.0" class="sun-ray ray-bright" />
+                <line x1="263.2" y1="175.2" x2="292.7" y2="7.7" class="sun-ray ray-dim" />
+                <line x1="276.0" y1="178.6" x2="325.9" y2="41.4" class="sun-ray ray-dim" />
+                <line x1="288.0" y1="184.2" x2="368.0" y2="45.6" class="sun-ray ray-bright" />
+                <line x1="298.9" y1="191.8" x2="392.7" y2="79.9" class="sun-ray ray-dim" />
+                <line x1="308.2" y1="201.1" x2="438.4" y2="91.9" class="sun-ray ray-dim" />
+                <line x1="315.8" y1="212.0" x2="442.3" y2="139.0" class="sun-ray ray-bright" />
+                <line x1="321.4" y1="224.0" x2="471.8" y2="169.3" class="sun-ray ray-dim" />
+                <line x1="324.8" y1="236.8" x2="468.6" y2="211.5" class="sun-ray ray-dim" />
+              </g>
+
+              <!-- Concentric Guide Rings -->
+              <circle cx="250" cy="250" r="236" class="svg-ring outer-dash" />
+              <circle cx="250" cy="250" r="215" class="svg-ring fine-ring" />
+              <circle cx="250" cy="250" r="165" class="svg-ring fine-ring" />
+              <circle cx="250" cy="250" r="120" class="svg-ring inner-dash" />
+
+              <!-- Outer Runic Inscription Wheel (Clockwise) -->
+              <g class="rune-wheel rune-wheel-outer">
+                <text class="rune-text rune-fraktur" filter="url(#goldGlow)">
+                  <textPath href="#outerRunePath" startOffset="0%">
+                    « CIEL ✦ THOUGHT ACCELERATION ✦ SACRED WISDOM ✦ SWARM SYNTHESIS ✦ SOUL MATRIX ✦ RAPHAEL CORE ✦ »
+                  </textPath>
+                </text>
+              </g>
+
+              <!-- Middle Runic Glyph Wheel (Counter-Clockwise) -->
+              <g class="rune-wheel rune-wheel-mid">
+                <text class="rune-text rune-ancient" filter="url(#goldGlow)">
+                  <textPath href="#midRunePath" startOffset="0%">
+                    ᚛ ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ ᚜ ✦ 0301977 ✦ 16969 ✦ 26961 ✦
+                  </textPath>
+                </text>
+              </g>
+
+              <!-- Inner Geometric Wheel (Clockwise) -->
+              <g class="rune-wheel rune-wheel-inner">
+                <text class="rune-text rune-gold" filter="url(#goldGlow)">
+                  <textPath href="#innerRunePath" startOffset="0%">
+                    ◈ NOTICE // SYNTHESIS ACTIVE ◈ THOUGHT ACCELERATION: 1,000,000x ◈
+                  </textPath>
+                </text>
+              </g>
+
+              <!-- Crosshairs & Coordinate Rays -->
+              <line x1="250" y1="12" x2="250" y2="488" class="crosshair-line" />
+              <line x1="12" y1="250" x2="488" y2="250" class="crosshair-line" />
+              <line x1="82" y1="82" x2="418" y2="418" class="crosshair-line diagonal" />
+              <line x1="82" y1="418" x2="418" y2="82" class="crosshair-line diagonal" />
+
+              <!-- Pure Vector Faceted Dodecagon Core Assembly -->
+              <g class="svg-core-group">
+                <!-- Outer Faceted Dodecagon -->
+                <polygon points="328.0,250.0 317.5,289.0 289.0,317.5 250.0,328.0 211.0,317.5 182.5,289.0 172.0,250.0 182.5,211.0 211.0,182.5 250.0,172.0 289.0,182.5 317.5,211.0" class="dodec-outer" />
+                <!-- Mid Counter-Rotating Dodecagon -->
+                <g class="dodec-rotating-mid">
+                  <polygon points="316.0,250.0 307.2,283.0 283.0,307.2 250.0,316.0 217.0,307.2 192.8,283.0 184.0,250.0 192.8,217.0 217.0,192.8 250.0,184.0 283.0,192.8 307.2,217.0" class="dodec-mid" />
+                </g>
+                <!-- Inner Glowing Sun Core Dodecagon -->
+                <polygon points="302.0,250.0 295.0,276.0 276.0,295.0 250.0,302.0 224.0,295.0 205.0,276.0 198.0,250.0 205.0,224.0 224.0,205.0 250.0,198.0 276.0,205.0 295.0,224.0" class="dodec-inner" fill="url(#sunCoreGlow)" />
+                <!-- Radiant Incandescent Center Circle -->
+                <circle cx="250" cy="250" r="22" fill="#FFFFFF" class="sun-blaze" />
+                <text x="250" y="255" text-anchor="middle" class="core-sparkle-glyph">✦</text>
+              </g>
+            </svg>
+
+            <!-- Real-Time Dual Concentric Neon Rings Voice Visualizer (Cyan to Magenta Gradient) -->
+            <canvas id="voiceVisualizer" width="500" height="500" class="voice-visualizer"></canvas>
+
+          </div>
+        </section>
+
+        <!-- Ciel Speech & Dialogue Output (Auto-expands with response) -->
+        <section class="ciel-dialogue-section" id="dialogueSection">
+          <div class="dialogue-header">
+            <div class="dialogue-title">
+              <span class="ciel-avatar-icon">✦</span>
+              <span>CIEL // VOCAL &amp; INTELLIGENCE DOSSIER</span>
+            </div>
+            <div class="dialogue-meta-group">
+              <span class="mono-meta" id="missionElapsed"></span>
+              <button class="audio-replay-btn" id="audioReplayBtn" title="Replay voice audio" style="display: none;">
+                <span>🔊 Replay</span>
+              </button>
+            </div>
+          </div>
+          <div class="dialogue-content" id="cielDialogueText">
+            <em>"Notice: The Divine Wisdom Core is active. All subordinate agents stand ready for instruction."</em>
+          </div>
+          <audio id="cielAudioPlayer" preload="none"></audio>
+        </section>
+
+      </main>
+
+      <!-- Autonomous Suggestion Floating Banner -->
+      <aside class="ciel-suggestion-toast" id="cielSuggestionToast" style="display: none;" role="region" aria-label="Autonomous Recommendation">
+        <div class="suggestion-header">
+          <div class="suggestion-tag">
+            <span class="suggestion-sparkle">✦</span>
+            <span class="suggestion-agent" id="suggAgent">CHAEWON</span>
+            <span class="suggestion-sep">//</span>
+            <span class="suggestion-category" id="suggCategory">DAILY PRIORITY</span>
+          </div>
+          <button type="button" class="btn-sugg-close" id="suggCloseBtn" title="Dismiss" aria-label="Close suggestion">✕</button>
+        </div>
+        <div class="suggestion-body">
+          <strong class="suggestion-title" id="suggTitle">Priority: High-Leverage Outreach</strong>
+          <p class="suggestion-desc" id="suggDesc">Queued in today's daily log: "Execute High-Leverage Outreach (Tailored Applications)". Ready for dispatch.</p>
+        </div>
+        <div class="suggestion-footer">
+          <button type="button" class="btn-sugg-act" id="suggActBtn">Dispatch Chaewon</button>
+          <button type="button" class="btn-sugg-dismiss" id="suggDismissBtn">Dismiss</button>
+        </div>
+      </aside>
+
+      <!-- Bottom Command & Voice Dock (Auto-expanding chat container with Icon-only buttons) -->
+      <footer class="hud-dock">
+        <form class="command-bar" id="commandForm">
+          <!-- Icon-Only Voice Button -->
+          <button type="button" class="btn-icon voice-btn" id="voiceBtn" title="Hold Space or Click to Speak" aria-label="Microphone">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+            </svg>
+          </button>
+
+          <!-- Auto-expanding Textarea Input -->
+          <div class="input-wrapper">
+            <textarea id="commandInput" class="command-input" rows="1" placeholder="Command Ciel or press Space to speak..." autocomplete="off" spellcheck="false"></textarea>
+          </div>
+
+          <!-- Icon-Only Calculate / Send Button -->
+          <button type="submit" class="btn-icon send-btn" id="sendBtn" title="Calculate (Enter)" aria-label="Calculate">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Quick Preset Triggers -->
+        <div class="quick-triggers">
+          <span class="mono-label">PRESETS:</span>
+          <button type="button" class="trigger-chip chip-demo" id="demoRaphaelBtn">🎵 Play Raphael Voice Model</button>
+          <button type="button" class="trigger-chip" id="clearMemoryBtn" title="Clear short-term conversation context">↺ Reset Memory</button>
+          <button type="button" class="trigger-chip chip-appraisal" data-prompt="Ciel, evaluate our operational status and provide your recommendations.">✦ Proactive Appraisal</button>
+          <button class="trigger-chip" data-prompt="Ciel, what is the weather like today?">🌤 Live Weather</button>
+          <button class="trigger-chip" data-prompt="Ciel, search the web for the latest major AI breakthroughs.">🌐 Web Intelligence</button>
+          <button class="trigger-chip" data-prompt="Ciel, run a diagnostic on our PC vitals and check our Obsidian brain.">Hardware &amp; Obsidian</button>
+          <button class="trigger-chip" data-prompt="Ciel, verify our portfolio DOM tree and check for broken links.">DOM &amp; Link Audit</button>
+          <button class="trigger-chip" data-prompt="Ciel, provide a morning briefing and check our inbox status.">Morning Briefing</button>
+          <button class="trigger-chip" data-prompt="Ciel, check Chaewon's resume engine readiness.">ATS Resume Engine</button>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <script src="hud.js?v=4"></script>
+</body>
+</html>
